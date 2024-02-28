@@ -8,6 +8,11 @@ export interface ICache<T> {
   data: T
 }
 
+/**
+ * Decorator function that caches a response and returns cached data if ttl is not expired
+ * @param _key key of the cache
+ * @param options options object that contains ttl option that sets in minutes
+ */
 export function cache<P>(_key: string, options: ICacheOptions = { ttl: 5 }) {
   return function (
     _: any,
