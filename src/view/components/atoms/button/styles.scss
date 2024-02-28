@@ -1,0 +1,37 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+.button {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  position: relative;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  background-color: $c-primary;
+  padding: 8px 16px;
+  font-size: 18px;
+  font-weight: 300;
+  color: #fff;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $c-success;
+    transform: translateY(90%);
+    transition: 0.25s ease-in-out;
+  }
+  &:hover {
+    background-color: $c-success;
+    &::after {
+      background-color: $c-primary;
+      transform: translateY(-90%);
+    }
+  }
+}
