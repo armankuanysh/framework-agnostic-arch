@@ -5,6 +5,10 @@ import ProductRepository from 'core/repositories/product'
 import CategoryController from './category'
 import CategoryRepository from 'core/repositories/category'
 import ProductAdapter from 'core/services/adapters/product'
+import RegistrationController from './registration'
+import RegistrationAdapter from 'core/services/adapters/registration'
+import Registration from 'core/repositories/registration'
+import RegistrationInteractor from 'core/services/interactors/registration'
 
 class Controllers {
   private noGateway = false
@@ -12,6 +16,7 @@ class Controllers {
   private http!: IHttpClient
   products!: ProductController
   categories!: CategoryController
+  registration!: RegistrationController
 
   constructor() {
     this.getHttp()
@@ -34,6 +39,10 @@ class Controllers {
       )
       this.categories = new CategoryController(
         new CategoryRepository(this.http)
+      )
+      this.registration = new RegistrationController(
+        new Registration(),
+        new RegistrationInteractor(new RegistrationAdapter())
       )
     } else {
       console.log('there is no initialized gateways')
