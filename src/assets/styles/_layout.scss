@@ -1,4 +1,19 @@
+@import './variables';
+@import './mixins';
 *,
 body {
   font-family: 'Lufga';
+}
+
+.container {
+  max-width: 570px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  @include small-laptop {
+    max-width: $md;
+  }
+  @include laptop {
+    max-width: $slg;
+  }
 }

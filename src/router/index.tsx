@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import HomePage from 'pages/index'
 import ProductsPage from 'pages/products'
 import MainLayout from 'src/view/layouts/main'
+import RegistrationPage from 'pages/registration'
 
 const router: FC = () => (
   <BrowserRouter>
@@ -20,6 +21,14 @@ const router: FC = () => (
         element={
           <MainLayout>
             <ProductsPage />
+          </MainLayout>
+        }
+      />
+      <Route
+        path="/auth/registration"
+        element={
+          <MainLayout>
+            <RegistrationPage />
           </MainLayout>
         }
       />

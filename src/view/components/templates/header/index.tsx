@@ -11,6 +11,10 @@ export const links: ILink[] = [
     to: '/products',
     title: 'Products',
   },
+  {
+    to: '/auth/registration',
+    title: 'Registration',
+  },
 ]
 
 const Header: FC = () => {
