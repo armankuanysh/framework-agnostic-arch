@@ -1,0 +1,22 @@
+@mixin font($alias, $name, $weight) {
+  @font-face {
+    font-family: $alias;
+    src: url('../fonts/' + $name + '.woff2') format('woff2'),
+      url('../fonts/' + $name + '.woff') format('woff'),
+      url('../fonts/' + $name + '.ttf') format('truetype'),
+      url('../fonts/' + $name + '.eot'),
+      url('../fonts/' + $name + '.eot?#iefix') format('embedded-opentype');
+    font-weight: $weight;
+    font-display: swap;
+  }
+}
+
+@include font('Lufga', 'Lufga-Thin', 100);
+@include font('Lufga', 'Lufga-ExtraLight', 200);
+@include font('Lufga', 'Lufga-Light', 300);
+@include font('Lufga', 'Lufga-Regular', 400);
+@include font('Lufga', 'Lufga-Medium', 500);
+@include font('Lufga', 'Lufga-SemiBold', 600);
+@include font('Lufga', 'Lufga-Bold', 700);
+@include font('Lufga', 'Lufga-ExtraBold', 800);
+@include font('Lufga', 'Lufga-Black', 900);

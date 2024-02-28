@@ -1,0 +1,37 @@
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/variables';
+
+.main {
+  position: relative;
+  padding: 0 16px;
+}
+
+.aside {
+  position: fixed;
+  width: 5%;
+  height: 80%;
+  border-right: 1px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    position: relative;
+    text-transform: uppercase;
+    transform: rotateZ(-90deg);
+    white-space: nowrap;
+  }
+}
+
+.container {
+  max-width: 570px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  @include small-laptop {
+    max-width: $md;
+  }
+  @include laptop {
+    max-width: $slg;
+  }
+}

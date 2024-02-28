@@ -1,0 +1,22 @@
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/variables';
+
+.product-list {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+}
+.container {
+  max-width: 570px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  @include small-laptop {
+    max-width: $md;
+  }
+  @include laptop {
+    max-width: $slg;
+  }
+}

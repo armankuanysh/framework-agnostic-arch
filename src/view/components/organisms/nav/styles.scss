@@ -1,0 +1,46 @@
+.nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  ul {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+
+    a {
+      position: relative;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #333;
+      font-size: 24px;
+      transition: 0.25s ease-in-out;
+
+      &::after {
+        transition: 0.25s ease-in-out;
+      }
+
+      &:hover {
+        color: #31d08d;
+        &::after {
+          opacity: 0;
+        }
+      }
+
+      &.is-active::after {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background-color: #ffdb26;
+        z-index: -1;
+      }
+    }
+  }
+}

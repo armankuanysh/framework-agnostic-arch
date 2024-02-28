@@ -1,0 +1,61 @@
+@function rem($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}rem;
+}
+
+@function vw($target) {
+  $vw-context: (1000 * 0.01) * 1px;
+  @return ($target/$vw-context) * 1vw;
+}
+
+$browser-context: 16;
+
+// fonts
+$f-heading: 'DIN Pro', arial, sans-serif;
+$f-text: 'DIN Pro', arial, sans-serif;
+
+// colors
+$c-primary: #f6b31b;
+$c-secondary: #ffdb26;
+$c-dark: #211f1d;
+$c-dark-secondary: #352f2b;
+$c-light-dark: #35373e;
+$c-light: #b8bac8;
+$c-success: #31d08d;
+$c-error: #d23737;
+$c-text: #4a4a68;
+$c-subtle-text: #999491;
+$c-background: #ecf1f4;
+$c-cards: #fafcfe;
+$c-footer: #363433;
+$c-input-bg: #3f3d3c;
+
+$c-red: #ff613f;
+$c-gray: #565962;
+
+// outline
+$outline-shadow: 3px 2px 22px -6px rgba(0, 0, 0, 0.75);
+
+// transitions
+$transition-primary: 0.3s;
+$transition-secondary: 0.2s;
+
+$imgBase: '../images/';
+
+$small: 560px;
+$middle: 760px;
+$tablet: 1000px;
+$laptop: 1170px;
+$desktop: 1300px;
+$wide: 1400px;
+$large: 1800px;
+
+// breakpoints
+$xs: 380px;
+$sm: 560px;
+$smd: 780px;
+$md: 1000px;
+$slg: 1025px;
+$lg: 1275px;
+$xlg: 1370px;
+$xxlg: 1445px;
+$xxxlg: 1925px;
