@@ -1,0 +1,33 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+.input {
+  position: relative;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+
+  &-label {
+    pointer-events: none;
+    opacity: 0.25;
+    transform: translate(2.7%, 135%);
+    transition: 0.3s ease-in-out;
+    &--focused {
+      opacity: 0.75;
+      transform: translate(0, 0);
+    }
+  }
+
+  &-element {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid $c-primary;
+    font-size: 16px;
+    padding: 8px;
+
+    &:focus {
+      border-bottom-color: $c-success;
+    }
+  }
+}
