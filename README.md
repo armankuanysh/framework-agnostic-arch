@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+# Framework agnostic architecture
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project includes an example of a framework-agnostic architecture implementation for front-end development.
 
-## Available Scripts
+---
+## Structure
+**Core** - directory for all business logic implementation.
 
-In the project directory, you can run:
+This directory contains next directories:
 
-### `npm start`
+**Repositories** 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+In simple terms, a repository is a popular pattern in backend development that aids in managing access to data storage, such as databases. However, its implementation in frontend development differs because we don't use databases. In our context, a repository helps us access data via API calls to the server.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+**Services**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This directory doesn't follow a specific pattern. It houses modules or classes that aid in data processing and handling various business use cases. As the project grows, services within this directory can be divided according to design patterns. For instance, if we need to change the interface of data received from a server to another interface, we can create a service using the adapter design pattern. However, for implementing specific business use cases, we can use Command or Interactor patterns.
 
-### `npm run build`
+**Controllers**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Controller is a design pattern aimed at decoupling modules. Rather than containing specific logic, it delegates this to other specified modules. For instance, the controller doesn't call APIs directly, but instead calls a repository method. Similarly, it doesn't process data but delegates this task to services.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Gateways**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The Gateway is an architectural pattern that bridges our business code base with external or third-party modules or services. In our context, gateways act as wrappers for third-party tools that we integrate into our services or repositories. This pattern helps encapsulate our core, maintaining independence from third-party tools.
