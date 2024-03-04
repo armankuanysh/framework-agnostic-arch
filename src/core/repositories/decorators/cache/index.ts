@@ -35,7 +35,7 @@ export function cache<P>(_key: string, options: ICacheOptions = { ttl: 5 }) {
         console.log('🐞 ~ returning cached data', prop)
         return prop?.data
       }
-      return method.apply(this, arguments).then((result: any) => {
+      return method.apply(this, arguments).then((result: P) => {
         console.log(`🐞 ~ making a call of the function by ${key} key`)
         prop = {
           key,
